@@ -24,8 +24,8 @@ The task would be quite challenging given the time allotted.  However, I am plan
 
 ## Schedule
 
-Week of 11/8: Investigate use of OpenGL ES libraries
-Week of 11/15: Work on 3D face modeling
-Week of 11/22: Work on eye detection
-Week of 11/29: Create gaze estimation based on 3D face modeling and eye detection
-Week of 12/6: Work on final system tuning and paper presentation
+Week of 11/8: Investigate use of OpenGL ES libraries  
+Week of 11/15: Work on 3D face modeling  
+Week of 11/22: Work on eye detection  
+Week of 11/29: Create gaze estimation based on 3D face modeling and eye detection  
+Week of 12/6: Work on final system tuning and paper presentation  
