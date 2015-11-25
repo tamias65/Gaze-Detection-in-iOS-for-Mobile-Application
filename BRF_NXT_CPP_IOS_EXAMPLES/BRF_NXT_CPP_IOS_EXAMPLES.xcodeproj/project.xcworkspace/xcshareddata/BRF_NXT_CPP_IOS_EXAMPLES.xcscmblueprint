@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2999D17E49E138A0A22D5A28B80DD59211BBFFE3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2999D17E49E138A0A22D5A28B80DD59211BBFFE3" : 0,
+    "6DD75DEB1F0586591A34CDC0336ABF2DF82FBE89" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "29953A50-20BF-4032-A942-9D7C943F1EA8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2999D17E49E138A0A22D5A28B80DD59211BBFFE3" : "Gaze-Detection-in-iOS-for-Mobile-Application\/",
+    "6DD75DEB1F0586591A34CDC0336ABF2DF82FBE89" : "brf"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BRF_NXT_CPP_IOS_EXAMPLES",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BRF_NXT_CPP_IOS_EXAMPLES\/BRF_NXT_CPP_IOS_EXAMPLES.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tamias65\/Gaze-Detection-in-iOS-for-Mobile-Application.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2999D17E49E138A0A22D5A28B80DD59211BBFFE3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/192.52.58.156\/Users\/marcel\/Documents\/workspaces\/brf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6DD75DEB1F0586591A34CDC0336ABF2DF82FBE89"
+    }
+  ]
+}

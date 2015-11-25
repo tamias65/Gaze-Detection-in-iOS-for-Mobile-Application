@@ -41,12 +41,12 @@ dispatch_queue_t videoQueue;
 
 //ExamplePointTrackingIOS _example(_cameraWidth, _cameraHeight);
 //ExampleFaceDetectionIOS _example(_cameraWidth, _cameraHeight);
-ExampleFaceTrackingIOS _example(_cameraWidth, _cameraHeight);
-//ExampleCandideTrackingIOS _example(_cameraWidth, _cameraHeight);
+//ExampleFaceTrackingIOS _example(_cameraWidth, _cameraHeight);
+ExampleCandideTrackingIOS _example(_cameraWidth, _cameraHeight);
 
 // static initializsers. READY will be called, once BRF is ready to be used.
 
-const std::function< void() > brf::BRFManager::READY = [&]{ _example.onReadyBRF(); };
+const std::function< void() > brf::BRFManager::READY = []{ _example.onReadyBRF(); };
 double DrawingUtils::CANVAS_WIDTH = (double)_cameraWidth;
 double DrawingUtils::CANVAS_HEIGHT = (double)_cameraHeight;
 
