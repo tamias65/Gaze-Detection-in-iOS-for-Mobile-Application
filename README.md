@@ -15,17 +15,18 @@ The biggest challenges in this problem are to create an application using only a
 ## Goals & Deliverables
 
 For this projects, the goals include
-1. Create a 3D face model using OpenGL ES
+1. Create a 3D face model using NXT-BRF library. 
 2. Create an eye gaze estimation of an individual based on the 3D face model
+3. Create an application of the eye gaze estimation for a purpose unique to mobile platforms.
 
-The primary success metrics of this project is to demo a working App.  The app should be able to create a 3D model first, then identify the eyeballs, and finally create a gaze estimation in real time.
+The primary success metrics of this project is to demo a working App. The app should be able to accurately create and track a 3D model face, then identify the eyeballs, and finally create a gaze estimation.  The deliverable for the project would be a video of a working example.  As a nice to have, the project would be able to work in real-time in class.
 
 The task would be quite challenging given the time allotted.  However, I am planning on using any existing libraries available that can provide speedup and scope simplification.
 
 ## Schedule
 
 Week of 11/8: Investigate use of OpenGL ES libraries  
-Week of 11/15: Work on 3D face modeling  
-Week of 11/22: Work on eye detection  
-Week of 11/29: Create gaze estimation based on 3D face modeling and eye detection  
+Week of 11/15: Work on 3D face modeling - DONE  
+Week of 11/22: Work on eye detection - IN PROGRESS  
+Week of 11/29: Create gaze estimation and final application  
 Week of 12/6: Work on final system tuning and paper presentation  
