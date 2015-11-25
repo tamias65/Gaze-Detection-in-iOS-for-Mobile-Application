@@ -1,0 +1,3 @@
+3D Face Tracking and Gaze Estimation Using a Monocular Camera
+A Natural Head Pose and Eye Gaze Dataset
+Canonical Correlation: a Tutorial
