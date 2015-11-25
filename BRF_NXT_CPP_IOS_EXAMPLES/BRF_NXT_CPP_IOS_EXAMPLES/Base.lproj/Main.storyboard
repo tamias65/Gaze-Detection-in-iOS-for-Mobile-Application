@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" promptedForUpgradeToXcode5="NO" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <deployment identifier="iOS"/>
-        <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rzb-MH-8MF"/>
+                        <viewControllerLayoutGuide type="bottom" id="seP-fO-cnS"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -22,8 +25,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="0.75408778103898055" blue="0.26098649646242511" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brf_next_logo_READY.png" translatesAutoresizingMaskIntoConstraints="NO" id="bT7-f6-pPh">
-                                <rect key="frame" x="0.0" y="6" width="176" height="128"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrowdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="bT7-f6-pPh">
+                                <rect key="frame" x="5" y="13" width="18" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="khw-Il-Uo6"/>
                                     <constraint firstAttribute="width" constant="176" id="l8a-vT-th7"/>
@@ -32,16 +35,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OqV-dv-unZ" firstAttribute="bottom" secondItem="cFR-uA-7A4" secondAttribute="bottom" type="default" id="2iq-b3-g6p"/>
+                            <constraint firstItem="OqV-dv-unZ" firstAttribute="bottom" secondItem="cFR-uA-7A4" secondAttribute="bottom" id="2iq-b3-g6p"/>
                             <constraint firstItem="bT7-f6-pPh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="6" id="3r8-Cc-oYv"/>
-                            <constraint firstItem="cFR-uA-7A4" firstAttribute="top" secondItem="OqV-dv-unZ" secondAttribute="top" type="default" id="Ft7-Fg-xTd"/>
-                            <constraint firstAttribute="bottom" secondItem="cFR-uA-7A4" secondAttribute="bottom" type="default" id="cAt-TP-PFc"/>
-                            <constraint firstItem="bT7-f6-pPh" firstAttribute="leading" secondItem="OqV-dv-unZ" secondAttribute="leading" type="default" id="ccT-bw-ywc"/>
-                            <constraint firstItem="OqV-dv-unZ" firstAttribute="leading" secondItem="cFR-uA-7A4" secondAttribute="leading" type="default" id="j9z-2i-dgp"/>
-                            <constraint firstAttribute="trailing" secondItem="cFR-uA-7A4" secondAttribute="trailing" type="default" id="kXS-bb-hLe"/>
-                            <constraint firstItem="cFR-uA-7A4" firstAttribute="trailing" secondItem="OqV-dv-unZ" secondAttribute="trailing" type="default" id="lEC-kv-hiT"/>
-                            <constraint firstItem="cFR-uA-7A4" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="rhx-cU-p3o"/>
-                            <constraint firstItem="bT7-f6-pPh" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="x7B-lo-fQu"/>
+                            <constraint firstItem="cFR-uA-7A4" firstAttribute="top" secondItem="OqV-dv-unZ" secondAttribute="top" id="Ft7-Fg-xTd"/>
+                            <constraint firstAttribute="bottom" secondItem="cFR-uA-7A4" secondAttribute="bottom" id="cAt-TP-PFc"/>
+                            <constraint firstItem="bT7-f6-pPh" firstAttribute="leading" secondItem="OqV-dv-unZ" secondAttribute="leading" id="ccT-bw-ywc"/>
+                            <constraint firstItem="OqV-dv-unZ" firstAttribute="leading" secondItem="cFR-uA-7A4" secondAttribute="leading" id="j9z-2i-dgp"/>
+                            <constraint firstAttribute="trailing" secondItem="cFR-uA-7A4" secondAttribute="trailing" id="kXS-bb-hLe"/>
+                            <constraint firstItem="cFR-uA-7A4" firstAttribute="trailing" secondItem="OqV-dv-unZ" secondAttribute="trailing" id="lEC-kv-hiT"/>
+                            <constraint firstItem="cFR-uA-7A4" firstAttribute="top" secondItem="3" secondAttribute="top" id="rhx-cU-p3o"/>
+                            <constraint firstItem="bT7-f6-pPh" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="x7B-lo-fQu"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -52,15 +55,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="213" y="294"/>
         </scene>
     </scenes>
     <resources>
-        <image name="brf_next_logo_READY.png" width="210" height="164"/>
+        <image name="arrowdown.png" width="16" height="22"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
