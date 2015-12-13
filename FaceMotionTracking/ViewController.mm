@@ -109,6 +109,19 @@ bool _mirrored = true;
         state = 0;
         [self.leftEyeTest setHidden:NO];
         [self.rightEyeTest setHidden:NO];
+        [self.unlockedView setHidden:YES];
+        for(int i = 0; i < inputPattern.size(); i++){
+            if(inputPattern.at(i) == '0'){
+                UIView *viewCenterRemove = [self.centerDotView viewWithTag:3];
+                [viewCenterRemove removeFromSuperview];
+            }else if(inputPattern.at(i) == 'L'){
+                UIView *viewLeftRemove = [self.leftArrowView viewWithTag:1];
+                [viewLeftRemove removeFromSuperview];
+            }else if(inputPattern.at(i) == 'R'){
+                UIView *viewRightRemove = [self.rightArrowView viewWithTag:2];
+                [viewRightRemove removeFromSuperview];
+            }
+        }
     }
     CGRect newSize = self.imagePreview.frame;
     newSize.size.width = screenWidth;
@@ -183,6 +196,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
  setCentroidInCVFrame:(CGPoint&) cvFrame
           leftOrRight:(int) side
 {
+    CIContext *tempContext = [CIContext contextWithOptions:nil];
+    CGImageRef imageRef = [tempContext createCGImage:ciImage fromRect:eyeRect];
+    //    CGImageRef imageRef = CGImageCreateWithImageInRect(ciImage, eyeRect);
+    UIImage* eyePatch = [UIImage imageWithCGImage:imageRef];
+//    
 //    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc] initWithImage:eyePatch];
 //    GPUImageColorInvertFilter *invertImageFilter = [[GPUImageColorInvertFilter alloc] init];
 //    GPUImageGrayscaleFilter *grayImageFilter = [[GPUImageGrayscaleFilter alloc] init];
@@ -193,12 +211,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 //    [grayImageFilter addTarget:thresholdImageFilter];
 //    // Process the image
 //    [stillImageSource processImage];
-    
-    //eyeRect = CGRectMake(eyeRect.origin.x,eyeRect.origin.y,eyeRect.size.width,eyeRect.size.height);
-    CIContext *tempContext = [CIContext contextWithOptions:nil];
-    CGImageRef imageRef = [tempContext createCGImage:ciImage fromRect:eyeRect];
-    //    CGImageRef imageRef = CGImageCreateWithImageInRect(ciImage, eyeRect);
-    UIImage* eyePatch = [UIImage imageWithCGImage:imageRef];
+//    UIImage* cv_img = [grayImageFilter imageFromCurrentFramebuffer];
 
     cv::Mat cv_img = [self cvMatFromUIImage:eyePatch];
     cv::Mat cv_gray;
@@ -206,7 +219,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     cv::cvtColor(~cv_img, cv_gray, CV_BGR2GRAY );
     cv::vector<cv::Vec3f> centroids;
     int thresh = 220;
-    int ksize =5;
+    //int ksize =5;
     //cv::Mat cv_gauss; cv::GaussianBlur(cv_gray, cv_gauss, cv::Size(ksize,ksize), 5,5);
     cv::Mat cv_thresh; cv::threshold(cv_gray, cv_thresh, thresh, 255, cv::THRESH_TOZERO);
     cv::Mat cv_canny; cv::Canny(cv_thresh, cv_canny, thresh/2, thresh);
@@ -262,7 +275,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     NSArray *sublayers = [NSArray arrayWithArray:[self.previewLayer sublayers]];
     NSInteger sublayersCount = [sublayers count], currentSublayer = 0;
-    NSInteger featuresCount = [features count], currentFeature = 0;
+    NSInteger featuresCount = [features count];
     //NSLog(@"feature count: %zd", featuresCount);
     
     UIView *viewToRemove = [self.imagePreview viewWithTag:12];
@@ -472,6 +485,13 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 - (void) getRunningAverage: (CGPoint &) eyeCentroid
                leftOrRight: (int) side
 {
+//    if(side==0){
+//        leftAvg.x = eyeCentroid.x;
+//        leftAvg.y = eyeCentroid.y;
+//    }else{
+//        rightAvg.x = eyeCentroid.x;
+//        rightAvg.y = eyeCentroid.y;
+//    }
     int numOfData = 2;
     if(side == 0){
         if(leftEyeAverage.size() < numOfData){
@@ -494,12 +514,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         }
         rightEyeAverage.push_back(eyeCentroid);
     }
-
 }
 
 - (void) runPattern
 {
-    int pixel_threshold = 10;
+    int pixel_threshold = 15;
     if(isCalibrated == false){
         frameCount++;
         if(frameCount>60){
@@ -515,6 +534,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
             rightCalibrated = rightAvg;
             inputPattern+="0";
             frameCount = 0;
+            backToCenter = true;
         }
     }else if (leftAvg.x < leftCalibrated.x-pixel_threshold && backToCenter==true){
         
@@ -546,20 +566,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (void) checkPattern
 {
-    if(inputPattern.size() == lockPattern.size()){
+    if(inputPattern.size() >= lockPattern.size()){
         if(lockPattern.compare(inputPattern)==0){
             NSLog(@"CONGRATS!!!!!!!!!!!!!!!");
-//            UILabel *leftLabel=[ [UILabel alloc] initWithFrame:CGRectMake(300,700,640,20)];
-//            leftLabel.text=[NSString stringWithFormat:@"Phone Unlocked."];
-//            leftLabel.textColor = [UIColor whiteColor];
-//            leftLabel.tag = 12;
-//            [self.view addSubview:leftLabel];
-//            leftLabel = nil;
-            
             [self.unlockedView setHidden:NO];
             [self.unlockedView addSubview:unlockedImageView];
-            //usleep(2000000);
-            //exit(0);
             
         }else{
             NSLog(@"TRY AGAIN");

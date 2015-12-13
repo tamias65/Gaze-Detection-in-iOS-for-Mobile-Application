@@ -1,4 +1,6 @@
 # Gaze-Detection-in-iOS-for-Mobile-Application
+Final video results:
+https://youtu.be/BoD82-1qBUU
 
 ## Summary
 
@@ -25,8 +27,8 @@ The task would be quite challenging given the time allotted.  However, I am plan
 
 ## Schedule
 
-Week of 11/8: Investigate use of OpenGL ES libraries  
+Week of 11/8: Investigate use of OpenGL ES libraries - DONE
 Week of 11/15: Work on 3D face modeling - DONE  
-Week of 11/22: Work on eye detection - IN PROGRESS  
-Week of 11/29: Create gaze estimation and final application  
-Week of 12/6: Work on final system tuning and paper presentation  
+Week of 11/22: Work on eye detection - DONE 
+Week of 11/29: Create gaze estimation and final application - DONE
+Week of 12/6: Work on final system tuning and paper presentation - DONE

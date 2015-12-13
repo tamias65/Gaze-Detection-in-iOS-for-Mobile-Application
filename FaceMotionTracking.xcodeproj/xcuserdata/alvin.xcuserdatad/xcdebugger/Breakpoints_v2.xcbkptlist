@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FaceMotionTracking/ViewController.mm"
-            timestampString = "471458162.417559"
+            timestampString = "471669760.10082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "733"
-            endingLineNumber = "733"
+            startingLineNumber = "745"
+            endingLineNumber = "745"
             landmarkName = "-cvMatFromUIImage:"
             landmarkType = "5">
          </BreakpointContent>
